@@ -1,0 +1,5 @@
+---
+
+systemd_tweak_tmp_maxage: "30d"
+systemd_tweak_var_tmp_maxage: "40d"
+

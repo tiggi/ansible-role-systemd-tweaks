@@ -1,0 +1,7 @@
+---
+
+- name: Template in better tmp.conf for systemd-tmpfiles
+  template: 
+    src: "tmp.conf.j2"
+    dest: "/etc/tmpfiles.d/tmp.conf"
+
