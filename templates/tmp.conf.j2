@@ -1,0 +1,14 @@
+#  This file is managed by ansible (ansible-role-systemd-tweaks)
+# 
+
+# See tmpfiles.d(5) for details
+
+# Clear tmp directories separately, to make them easier to override
+v /tmp 1777 root root {{ systemd_tweak_tmp_maxage }} 
+v /var/tmp 1777 root root {{ systemd_tweak_var_tmp_maxage }} 
+
+# Exclude namespace mountpoints created with PrivateTmp=yes
+x /tmp/systemd-private-%b-*
+X /tmp/systemd-private-%b-*/tmp
+x /var/tmp/systemd-private-%b-*
+X /var/tmp/systemd-private-%b-*/tmp
